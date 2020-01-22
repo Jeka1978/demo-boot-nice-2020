@@ -1,6 +1,7 @@
 package com.nice.demobootnice2020.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nice.ironbankstarter2020.ConditionalOnProduction;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/api")
+@ConditionalOnProduction
 public class HelloController {
 
 

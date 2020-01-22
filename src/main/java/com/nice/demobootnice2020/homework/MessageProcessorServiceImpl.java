@@ -3,10 +3,7 @@ package com.nice.demobootnice2020.homework;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Evgeny Borisov
@@ -14,9 +11,15 @@ import java.util.Set;
 @Service
 public class MessageProcessorServiceImpl implements MessageProcessorService {
 
+    private Map<Integer,MessageHandler> map = new HashMap<>();
 
-    @Autowired
-    private Map<Integer,MessageHandler> map;
+    @Override
+    public void registerHandler(MessageHandler messageHandler, int code) {
+        if (map.containsKey(code)) {
+            throw new IllegalStateException(code + " already exists");
+        }
+        map.put(code, messageHandler);
+    }
 
 
     @Override

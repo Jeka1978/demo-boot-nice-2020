@@ -1,5 +1,6 @@
 package com.nice.demobootnice2020.homework;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,5 +18,8 @@ public class WhatsappMessageHandler implements MessageHandler {
     public int myType() {
         return 2;
     }
+
+
+
 }
 
