@@ -5,4 +5,5 @@ package com.nice.demobootnice2020.homework;
  */
 public interface MessageHandler {
     String handle(Message message);
+    int myType();
 }

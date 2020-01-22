@@ -5,11 +5,16 @@ import org.springframework.stereotype.Component;
 /**
  * @author Evgeny Borisov
  */
-@Component("1")
+@Component
 public class SmsMessageHandler implements MessageHandler {
     @Override
     public String handle(Message message) {
         System.out.println("sending by sms");
         return message.getText()+ "was sent by sms";
+    }
+
+    @Override
+    public int myType() {
+        return 1;
     }
 }

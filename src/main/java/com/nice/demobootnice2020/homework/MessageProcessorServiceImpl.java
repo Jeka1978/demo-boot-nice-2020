@@ -14,13 +14,14 @@ import java.util.Set;
 @Service
 public class MessageProcessorServiceImpl implements MessageProcessorService {
 
+
     @Autowired
-    private Map<String,MessageHandler> map;
+    private Map<Integer,MessageHandler> map;
 
 
     @Override
     public String processMessage(Message message) {
-        String processingType = String.valueOf(message.getProcessingType());
+        int processingType = message.getProcessingType();
         MessageHandler messageHandler = map.get(processingType);
         if (messageHandler == null) {
             throw new UnsupportedOperationException(processingType + " not supported yet");

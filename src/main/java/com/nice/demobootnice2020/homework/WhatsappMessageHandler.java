@@ -5,11 +5,17 @@ import org.springframework.stereotype.Component;
 /**
  * @author Evgeny Borisov
  */
-@Component("2")
+@Component
 public class WhatsappMessageHandler implements MessageHandler {
     @Override
     public String handle(Message message) {
         System.out.println("sending by whatsapp");
         return message.getText()+ "was sent by whatsapp";
     }
+
+    @Override
+    public int myType() {
+        return 2;
+    }
 }
+
